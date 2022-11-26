@@ -14,24 +14,16 @@ const Home: NextPage = () => {
 			</Head>
 			<ul>
 				<li>
-					<Link href="/">
-						<a>Home</a>
-					</Link>
+					<Link href="/">Home</Link>
 				</li>
 				<li>
-					<Link href="/case1">
-						<a>case1</a>
-					</Link>
+					<Link href="/case1">case1</Link>
 				</li>
 				<li>
-					<Link href="/about">
-						<a>About Us</a>
-					</Link>
+					<Link href="/about">About Us</Link>
 				</li>
 				<li>
-					<Link href="/blog/hello-world">
-						<a>Blog Post</a>
-					</Link>
+					<Link href="/blog/hello-world">Blog Post</Link>
 				</li>
 			</ul>
 		</div>
