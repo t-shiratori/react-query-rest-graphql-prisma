@@ -7,7 +7,7 @@ const Page: NextPage = () => {
 
 	console.log({ isFetched, isLoading, isSuccess, isError, data })
 
-	return <div>case1</div>
+	return <div>initilalLoad</div>
 }
 
 export default Page

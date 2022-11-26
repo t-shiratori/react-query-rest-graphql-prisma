@@ -20,10 +20,7 @@ const Home: NextPage = () => {
 					<Link href="/case1">case1</Link>
 				</li>
 				<li>
-					<Link href="/about">About Us</Link>
-				</li>
-				<li>
-					<Link href="/blog/hello-world">Blog Post</Link>
+					<Link href="/initilalLoad">initilalLoad</Link>
 				</li>
 			</ul>
 		</div>
