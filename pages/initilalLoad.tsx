@@ -1,9 +1,9 @@
 import type { NextPage } from 'next'
 import { Layout } from '../components/layout'
-import { useApi } from '../hooks/useApi'
+import { useUserApi } from '../hooks/useUserApi'
 
 const Page: NextPage = () => {
-	const { isFetched, isLoading, isSuccess, isError, data } = useApi()
+	const { isFetched, isLoading, isSuccess, isError, data } = useUserApi({ id: 1 })
 
 	console.log({ isFetched, isLoading, isSuccess, isError, data })
 

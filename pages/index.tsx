@@ -20,6 +20,9 @@ const Home: NextPage = () => {
 				<li>
 					<Link href="/initilalLoad">initilalLoad</Link>
 				</li>
+				<li>
+					<Link href="/buttonClickLoad">buttonClickLoad</Link>
+				</li>
 			</ul>
 		</div>
 	)
