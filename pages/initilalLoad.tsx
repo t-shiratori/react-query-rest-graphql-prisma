@@ -1,5 +1,5 @@
-import { useQuery } from '@tanstack/react-query'
 import type { NextPage } from 'next'
+import { Layout } from '../components/layout'
 import { useApi } from '../hooks/useApi'
 
 const Page: NextPage = () => {
@@ -7,7 +7,7 @@ const Page: NextPage = () => {
 
 	console.log({ isFetched, isLoading, isSuccess, isError, data })
 
-	return <div>initilalLoad</div>
+	return <Layout>initilalLoad</Layout>
 }
 
 export default Page

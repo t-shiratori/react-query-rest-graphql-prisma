@@ -4,9 +4,10 @@ type Options = {
 	successHandler?: (data: unknown) => void
 	errorHandler?: (data: unknown) => void
 	settledHandler?: (data: unknown) => void
+	enabled?: boolean
 }
 
-export const useApi = ({ successHandler, errorHandler, settledHandler }: Options = {}) => {
+export const useApi = ({ successHandler, errorHandler, settledHandler, enabled = false }: Options = {}) => {
 	return useQuery({
 		queryKey: ['todos'],
 		queryFn: async () => {
@@ -16,7 +17,7 @@ export const useApi = ({ successHandler, errorHandler, settledHandler }: Options
 			}
 			return response.json()
 		},
-		enabled: false,
+		enabled,
 		onSuccess: (data) => {
 			successHandler?.(data)
 		},
