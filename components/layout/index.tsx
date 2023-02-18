@@ -8,11 +8,11 @@ type Props = {
 
 export const Layout = ({ children }: Props) => {
 	return (
-		<>
+		<div className="p-6">
 			<nav className={styles.nav}>
 				<Link href={'/'}>Home</Link>
 			</nav>
 			<div>{children}</div>
-		</>
+		</div>
 	)
 }
