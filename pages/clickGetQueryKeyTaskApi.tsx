@@ -28,6 +28,7 @@ const Page: NextPage = () => {
 			/>
 
 			<TextInput
+				className="mx-3"
 				value={formValue ?? ''}
 				handleChange={(e) => {
 					setFormValue(e.target.value)

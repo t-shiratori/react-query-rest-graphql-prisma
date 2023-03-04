@@ -9,7 +9,7 @@ type TProps = {
 
 export const Select = ({ name, value, handleChange, options }: TProps) => {
 	return (
-		<select className="mx-8 p-2 border-solid border-2 rounded-sm border-slate-600" name={name} onChange={handleChange}>
+		<select className="p-2 border-solid border-2 rounded-sm border-slate-600" name={name} onChange={handleChange}>
 			<option value="undefined" selected={value == undefined}>
 				-
 			</option>
