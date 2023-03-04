@@ -18,16 +18,16 @@ const Home: NextPage = () => {
 					<Link href="/clickGetQueryKeyUserApi">clickGetQueryKeyUserApi</Link>
 				</li>
 				<li>
-					<Link href="/clickGetQueryKeyTaskApi">clickGetQueryKeyTaskApi</Link>
-				</li>
-				<li>
 					<Link href="/clickGetQueryKeyTodoApi">clickGetQueryKeyTodoApi</Link>
 				</li>
 				<li>
-					<Link href="/clickPostQueryKeyTaskApi">clickPostQueryKeyTaskApi</Link>
+					<Link href="/landingGetQueryKeyTasksApi">landingGetQueryKeyTasksApi</Link>
 				</li>
 				<li>
-					<Link href="/landingGetQueryKeyTasksApi">landingGetQueryKeyTasksApi</Link>
+					<Link href="/clickGetQueryKeyTaskApi">clickGetQueryKeyTaskApi</Link>
+				</li>
+				<li>
+					<Link href="/clickPostQueryKeyTaskApi">clickPostQueryKeyTaskApi</Link>
 				</li>
 			</ul>
 		</div>
