@@ -1,7 +1,7 @@
 import { useQuery } from '@tanstack/react-query'
-import { TBaseParams, TUserResponse } from './type'
+import { TBaseQueryParams, TUserResponse } from './type'
 
-type TParams = { id: number } & TBaseParams
+type TParams = { id: number } & TBaseQueryParams
 
 export const useUserApi = ({ id, successHandler, errorHandler, settledHandler, enabled = true }: TParams) => {
 	const apiUrl = `https://jsonplaceholder.typicode.com/users/${id}`

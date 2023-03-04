@@ -1,9 +1,19 @@
-export type TBaseParams = {
+export type TBaseQueryParams = {
 	queryKey?: string[]
 	successHandler?: (data: unknown) => void
 	errorHandler?: (data: unknown) => void
 	settledHandler?: (data: unknown) => void
 	enabled?: boolean
+	staleTime?: number
+	cacheTime?: number
+}
+
+export type TBaseMutationParams = {
+	mutationKey?: string[]
+	reqBody: unknown
+	successHandler?: (data: unknown) => void
+	errorHandler?: (data: unknown) => void
+	settledHandler?: (data: unknown) => void
 }
 
 export type TUserResponse = {

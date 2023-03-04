@@ -1,9 +1,10 @@
 import { useQuery } from '@tanstack/react-query'
+import { TTask } from '../db/tasks'
 import { TBaseQueryParams, TTodoResponse, TUserResponse } from './type'
 
 type TParams = { id?: string } & TBaseQueryParams
 
-export const useTodoApi = ({
+export const useTaskApi = ({
 	id,
 	successHandler,
 	errorHandler,
@@ -12,10 +13,10 @@ export const useTodoApi = ({
 	staleTime,
 	cacheTime,
 }: TParams) => {
-	const apiUrl = `https://jsonplaceholder.typicode.com/todos/${id}`
+	const apiUrl = `/api/tasks/${id}`
 
-	return useQuery<TTodoResponse>({
-		queryKey: ['todos', id],
+	return useQuery<TTask>({
+		queryKey: ['tasks', id],
 		queryFn: async () => {
 			const response = await fetch(apiUrl)
 			return response.json()

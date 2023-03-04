@@ -12,16 +12,22 @@ const Home: NextPage = () => {
 			</Head>
 			<ul>
 				<li>
-					<Link href="/">Home</Link>
+					<Link href="/landingGetQueryKeyUserApi">landingGetQueryKeyUserApi</Link>
 				</li>
 				<li>
-					<Link href="/case1">case1</Link>
+					<Link href="/clickGetQueryKeyUserApi">clickGetQueryKeyUserApi</Link>
 				</li>
 				<li>
-					<Link href="/initilalLoad">initilalLoad</Link>
+					<Link href="/clickGetQueryKeyTaskApi">clickGetQueryKeyTaskApi</Link>
 				</li>
 				<li>
-					<Link href="/buttonClickLoad">buttonClickLoad</Link>
+					<Link href="/clickGetQueryKeyTodoApi">clickGetQueryKeyTodoApi</Link>
+				</li>
+				<li>
+					<Link href="/clickPostQueryKeyTaskApi">clickPostQueryKeyTaskApi</Link>
+				</li>
+				<li>
+					<Link href="/landingGetQueryKeyTasksApi">landingGetQueryKeyTasksApi</Link>
 				</li>
 			</ul>
 		</div>
