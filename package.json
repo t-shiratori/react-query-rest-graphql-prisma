@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "prettier": "prettier --write {src,pages}/**/*.{ts,tsx}"
   },
   "dependencies": {
     "@tanstack/react-query": "^4.2.3",
