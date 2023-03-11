@@ -12,6 +12,9 @@
   "dependencies": {
     "@tanstack/react-query": "^4.2.3",
     "@tanstack/react-query-devtools": "^4.17.1",
+    "apollo-server-micro": "^3.12.0",
+    "graphql": "^16.6.0",
+    "micro": "^9.4.1",
     "next": "13.0.5",
     "react": "18.2.0",
     "react-dom": "18.2.0"
