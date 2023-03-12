@@ -29,6 +29,9 @@ const Home: NextPage = () => {
         <li>
           <Link href="/clickPostQueryKeyTaskApi">clickPostQueryKeyTaskApi</Link>
         </li>
+        <li>
+          <Link href="/graphQL/landingQueryUsersApi">graphQL/useQueryUsersApi</Link>
+        </li>
       </ul>
     </div>
   )
