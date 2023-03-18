@@ -12,25 +12,25 @@ const Home: NextPage = () => {
       </Head>
       <ul>
         <li>
-          <Link href="/landingGetQueryKeyUserApi">landingGetQueryKeyUserApi</Link>
+          <Link href="/rest/landingGetQueryKeyUserApi">/rest/landingGetQueryKeyUserApi</Link>
         </li>
         <li>
-          <Link href="/clickGetQueryKeyUserApi">clickGetQueryKeyUserApi</Link>
+          <Link href="/rest/clickGetQueryKeyUserApi">/rest/clickGetQueryKeyUserApi</Link>
         </li>
         <li>
-          <Link href="/clickGetQueryKeyTodoApi">clickGetQueryKeyTodoApi</Link>
+          <Link href="/rest/clickGetQueryKeyTodoApi">/rest/clickGetQueryKeyTodoApi</Link>
         </li>
         <li>
-          <Link href="/landingGetQueryKeyTasksApi">landingGetQueryKeyTasksApi</Link>
+          <Link href="/rest/landingGetQueryKeyTasksApi">/rest/landingGetQueryKeyTasksApi</Link>
         </li>
         <li>
-          <Link href="/clickGetQueryKeyTaskApi">clickGetQueryKeyTaskApi</Link>
+          <Link href="/rest/clickGetQueryKeyTaskApi">/rest/clickGetQueryKeyTaskApi</Link>
         </li>
         <li>
-          <Link href="/clickPostQueryKeyTaskApi">clickPostQueryKeyTaskApi</Link>
+          <Link href="/rest/clickPostQueryKeyTaskApi">/rest/clickPostQueryKeyTaskApi</Link>
         </li>
         <li>
-          <Link href="/graphQL/landingQueryUsersApi">graphQL/useQueryUsersApi</Link>
+          <Link href="/graphQL/landingQueryUsersApi">/graphQL/useQueryUsersApi</Link>
         </li>
       </ul>
     </div>

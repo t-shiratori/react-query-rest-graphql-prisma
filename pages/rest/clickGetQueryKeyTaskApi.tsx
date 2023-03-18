@@ -1,16 +1,16 @@
 import type { NextPage } from 'next'
 import { useState } from 'react'
-import { Button } from '../src/components/Button'
-import { Layout } from '../src/components/layout'
-import { Select } from '../src/components/Select'
-import { TextInput } from '../src/components/TextInput'
-import { useTodoApi } from '../src/hooks/useTodoApi'
+import { Button } from '../../src/components/Button'
+import { Layout } from '../../src/components/layout'
+import { Select } from '../../src/components/Select'
+import { TextInput } from '../../src/components/TextInput'
+import { useTaskApi } from '../../src/hooks/useTaskApi'
 
 const Page: NextPage = () => {
   const [formValue, setFormValue] = useState<undefined | string>()
   const [requestId, setRequestIdId] = useState<undefined | string>()
 
-  const { isFetched, isLoading, isSuccess, isError, data, refetch } = useTodoApi({
+  const { isFetched, isLoading, isSuccess, isError, data, refetch } = useTaskApi({
     id: requestId,
     enabled: !!requestId,
   })
@@ -37,6 +37,7 @@ const Page: NextPage = () => {
 
       <Button
         handleClick={() => {
+          if (!formValue) return
           if (formValue == requestId) return refetch()
           setRequestIdId(formValue)
         }}
