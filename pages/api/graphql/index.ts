@@ -18,12 +18,10 @@ const server = new ApolloServer<ContextValue>({
 })
 
 export default startServerAndCreateNextHandler(server, {
-  context: async () => {
-    return {
-      dataSources: {
-        jsonplaceholderUserApi: new JsonplaceholderUserApi(),
-        jsonplaceholderPostApi: new JsonplaceholderPostApi(),
-      },
-    }
-  },
+  context: async () => ({
+    dataSources: {
+      jsonplaceholderUserApi: new JsonplaceholderUserApi(),
+      jsonplaceholderPostApi: new JsonplaceholderPostApi(),
+    },
+  }),
 })
