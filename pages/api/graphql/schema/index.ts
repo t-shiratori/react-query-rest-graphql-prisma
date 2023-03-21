@@ -1,6 +1,11 @@
 import gql from 'graphql-tag'
 
 export const typeDefs = gql`
+  type prismaUser {
+    id: ID!
+    name: String!
+    email: String!
+  }
   type Company {
     name: String
     catchPhrase: String
@@ -33,11 +38,6 @@ export const typeDefs = gql`
     id: Int
     title: String
     body: String
-  }
-  type prismaUser {
-    id: ID!
-    name: String!
-    email: String!
   }
   type Query {
     hello: String
