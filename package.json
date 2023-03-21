@@ -7,15 +7,20 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "prettier": "prettier --write {src,pages}/**/*.{ts,tsx} styles/**/*.css"
+    "prettier": "prettier --write {src,pages}/**/*.{ts,tsx} styles/**/*.css",
+    "gql-code-gen": "graphql-codegen --config codegen.ts",
+    "prisma-gen": "prisma generate"
   },
   "dependencies": {
-    "@prisma/client": "4.11.0",
+    "@apollo/datasource-rest": "^5.0.2",
+    "@apollo/server": "^4.5.0",
+    "@as-integrations/next": "^1.2.0",
+    "@prisma/client": "^4.11.0",
     "@tanstack/react-query": "^4.2.3",
     "@tanstack/react-query-devtools": "^4.17.1",
-    "apollo-server-micro": "^3.12.0",
     "graphql": "^16.6.0",
     "graphql-request": "^5.2.0",
+    "graphql-tag": "^2.12.6",
     "micro": "^9.4.1",
     "next": "13.0.5",
     "prisma": "^4.11.0",
@@ -23,6 +28,9 @@
     "react-dom": "18.2.0"
   },
   "devDependencies": {
+    "@graphql-codegen/cli": "^3.2.2",
+    "@graphql-codegen/typescript": "^3.0.2",
+    "@graphql-codegen/typescript-resolvers": "^3.1.1",
     "@types/node": "18.7.14",
     "@types/react": "18.0.17",
     "@types/react-dom": "18.0.6",
