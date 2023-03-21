@@ -1,5 +1,6 @@
 import { useQuery } from '@tanstack/react-query'
 import { GraphQLClient, gql } from 'graphql-request'
+import { JsonplaceholderUser } from '../../../pages/api/graphql/types/graphql'
 import { TBaseQueryParams } from '../type'
 
 const API_URL = `/api/graphql`
@@ -10,7 +11,7 @@ type TUser = {
   email: String
 }
 
-type TResponse = { users: TUser[] } | undefined
+type TResponse = { jsonplaceholderUsers: JsonplaceholderUser[] } | undefined
 
 type TParams = ({ id?: number } & TBaseQueryParams) | undefined
 
@@ -18,10 +19,11 @@ const graphQLClient = new GraphQLClient(API_URL)
 
 const gQuery = gql`
   query Query {
-    users {
-      id
-      email
+    jsonplaceholderUsers {
       name
+      posts {
+        title
+      }
     }
   }
 `
@@ -35,7 +37,7 @@ export const useQueryUsersApi = ({
   cacheTime,
 }: TParams = {}) => {
   return useQuery<TResponse>({
-    queryKey: ['graphql', 'tasks'],
+    queryKey: ['graphql', 'users'],
     queryFn: () => graphQLClient.request(gQuery),
     enabled,
     staleTime,

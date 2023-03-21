@@ -14,7 +14,7 @@ const Page: NextPage = () => {
         <h1 className="mb-3">結果</h1>
         <div>
           <ul>
-            {data?.users.map((item, i) => {
+            {data?.jsonplaceholderUsers.map((item, i) => {
               return <li key={i}>{item.name}</li>
             })}
           </ul>
