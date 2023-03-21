@@ -5,14 +5,14 @@ import { JsonplaceholderUserApi } from './datasources/jsonplaceholder-use'
 import { resolvers } from './resolver'
 import { typeDefs } from './schema'
 
-interface ContextValue {
+type TContextValue = {
   dataSources: {
     jsonplaceholderUserApi: JsonplaceholderUserApi
     jsonplaceholderPostApi: JsonplaceholderPostApi
   }
 }
 
-const server = new ApolloServer<ContextValue>({
+const server = new ApolloServer<TContextValue>({
   resolvers,
   typeDefs,
 })
