@@ -9,7 +9,8 @@
     "lint": "next lint",
     "prettier": "prettier --write {src,pages}/**/*.{ts,tsx} styles/**/*.css",
     "gql-code-gen": "graphql-codegen --config codegen.ts",
-    "prisma-gen": "prisma generate"
+    "prisma-gen": "prisma generate",
+    "prisma-studio": "prisma studio"
   },
   "dependencies": {
     "@apollo/datasource-rest": "^5.0.2",
