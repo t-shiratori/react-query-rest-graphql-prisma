@@ -1,10 +1,10 @@
 import type { NextPage } from 'next'
 import { useMemo, useState } from 'react'
-import { Button } from '../../src/components/Button'
-import { Layout } from '../../src/components/layout'
-import { TextInput } from '../../src/components/TextInput'
-import { TTask } from '../../src/db/tasks'
-import { usePostTaskApi } from '../../src/hooks/usePostTaskApi'
+import { Button } from '../../components/Button'
+import { Layout } from '../../components/layout'
+import { TextInput } from '../../components/TextInput'
+import { TTask } from '../../db/tasks'
+import { usePostTaskApi } from '../../hooks/usePostTaskApi'
 
 const Page: NextPage = () => {
   const [title, setTitle] = useState<string>()

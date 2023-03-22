@@ -1,10 +1,10 @@
 import type { NextPage } from 'next'
 import { useState } from 'react'
-import { Layout } from '../../src/components/layout'
-import { useQueryUsersApi } from '../../src/hooks/graphQL/useQueryUsersApi'
+import { Layout } from '../../components/layout'
+import { useTasksApi } from '../../hooks/useTasksApi'
 
 const Page: NextPage = () => {
-  const { isFetched, isLoading, isSuccess, isError, data } = useQueryUsersApi()
+  const { isFetched, isLoading, isSuccess, isError, data } = useTasksApi()
 
   console.log({ isFetched, isLoading, isSuccess, isError, data })
 
@@ -14,8 +14,8 @@ const Page: NextPage = () => {
         <h1 className="mb-3">結果</h1>
         <div>
           <ul>
-            {data?.jsonplaceholderUsers.map((item, i) => {
-              return <li key={i}>{item.name}</li>
+            {data?.map((item, i) => {
+              return <li key={i}>{item.title}</li>
             })}
           </ul>
         </div>

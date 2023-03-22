@@ -1,6 +1,6 @@
 import { useQuery } from '@tanstack/react-query'
 import { GraphQLClient, gql } from 'graphql-request'
-import { JsonplaceholderUser } from '../../../pages/api/graphql/types/graphql'
+import { JsonplaceholderUser } from '../../pages/api/graphql/types/graphql'
 import { TBaseQueryParams } from '../type'
 
 const API_URL = `/api/graphql`

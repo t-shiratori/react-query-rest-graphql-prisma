@@ -1,7 +1,7 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import type { NextApiRequest, NextApiResponse } from 'next'
-import { TError } from '../../../src/type'
-import { TTask, getTasks } from '../../../src/db/tasks'
+import { TError } from '../../../type'
+import { TTask, getTasks } from '../../../db/tasks'
 
 export default function handler(req: NextApiRequest, res: NextApiResponse<TTask | TError>) {
   const { id } = req.query
