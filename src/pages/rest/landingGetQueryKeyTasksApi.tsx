@@ -1,10 +1,9 @@
 import type { NextPage } from 'next'
-import { useState } from 'react'
 import { Layout } from '../../components/layout'
-import { useTasksApi } from '../../hooks/useTasksApi'
+import { useGetTasksApi } from '../../hooks/useGetTasksApi'
 
 const Page: NextPage = () => {
-  const { isFetched, isLoading, isSuccess, isError, data } = useTasksApi()
+  const { isFetched, isLoading, isSuccess, isError, data } = useGetTasksApi()
 
   console.log({ isFetched, isLoading, isSuccess, isError, data })
 

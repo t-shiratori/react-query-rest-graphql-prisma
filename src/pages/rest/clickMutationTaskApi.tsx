@@ -3,21 +3,21 @@ import { useMemo, useState } from 'react'
 import { Button } from '../../components/Button'
 import { Layout } from '../../components/layout'
 import { TextInput } from '../../components/TextInput'
-import { TTask } from '../../db/tasks'
-import { usePostTaskApi } from '../../hooks/usePostTaskApi'
+import { Prisma } from '@prisma/client'
+import { useMutationTaskApi } from '../../hooks/useMutationTaskApi'
 
 const Page: NextPage = () => {
   const [title, setTitle] = useState<string>()
-  const [description, setDescription] = useState<string>()
+  const [content, setContetnt] = useState<string>()
 
-  const { mutate } = usePostTaskApi()
+  const { mutate } = useMutationTaskApi()
 
-  const requestBody: TTask = useMemo(() => {
+  const requestBody: Prisma.TaskCreateInput = useMemo(() => {
     return {
-      title,
-      description: description ?? '',
+      title: title ?? '',
+      content: content ?? '',
     }
-  }, [description, title])
+  }, [content, title])
 
   return (
     <Layout>
@@ -25,12 +25,17 @@ const Page: NextPage = () => {
         タイトル <TextInput value={title ?? ''} handleChange={(e) => setTitle(e.target.value)} />
       </div>
       <div className="mb-3">
-        説明 <TextInput value={description ?? ''} handleChange={(e) => setDescription(e.target.value)} />
+        内容 <TextInput value={content ?? ''} handleChange={(e) => setContetnt(e.target.value)} />
       </div>
 
       <Button
         handleClick={() => {
-          mutate(requestBody)
+          mutate(requestBody, {
+            onSuccess: () => {
+              setTitle('')
+              setContetnt('')
+            },
+          })
         }}
       />
     </Layout>

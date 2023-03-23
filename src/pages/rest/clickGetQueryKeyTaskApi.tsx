@@ -19,14 +19,6 @@ const Page: NextPage = () => {
 
   return (
     <Layout>
-      <Select
-        value={formValue}
-        options={['1', '2', '3']}
-        handleChange={(e) => {
-          setFormValue(e.target.value)
-        }}
-      />
-
       <TextInput
         className="mx-3"
         value={formValue ?? ''}

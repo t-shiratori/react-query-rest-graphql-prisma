@@ -1,21 +1,18 @@
 import { useQuery } from '@tanstack/react-query'
-import { TTasks } from '../db/tasks'
-import { TBaseQueryParams, TTodoResponse, TUserResponse } from './type'
+import { TBaseQueryParams } from './type'
+import { Prisma } from '@prisma/client'
 
-type TParams = ({ id?: number } & TBaseQueryParams) | undefined
-
-export const useTasksApi = ({
-  id,
+export const useGetTasksApi = ({
   successHandler,
   errorHandler,
   settledHandler,
   enabled = true,
   staleTime,
   cacheTime,
-}: TParams = {}) => {
+}: TBaseQueryParams = {}) => {
   const apiUrl = `/api/tasks`
 
-  return useQuery<TTasks>({
+  return useQuery<Prisma.TaskMinAggregateInputType[]>({
     queryKey: ['tasks'],
     queryFn: async () => {
       const response = await fetch(apiUrl)
