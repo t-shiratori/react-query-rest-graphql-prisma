@@ -35,7 +35,7 @@ yarn prisma-studio
 yarn dev
 ```
 
-<img width="700" alt="スクリーンショット 2023-03-25 13 38 54" src="https://user-images.githubusercontent.com/8470739/227696447-9208fed7-da55-4a47-a8a0-a6199215657b.png">
+<img width="700" alt="スクリーンショット 2023-03-25 13 42 42" src="https://user-images.githubusercontent.com/8470739/227696569-f905a52c-67ed-434a-9a40-81b126e7ad2c.png">¥
 
 ## Apollo Explorer
 
