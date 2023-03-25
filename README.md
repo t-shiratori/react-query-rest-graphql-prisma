@@ -35,6 +35,8 @@ yarn prisma-studio
 yarn dev
 ```
 
+<img width="700" alt="スクリーンショット 2023-03-25 13 38 54" src="https://user-images.githubusercontent.com/8470739/227696447-9208fed7-da55-4a47-a8a0-a6199215657b.png">
+
 ## Apollo Explorer
 
 `http://localhost:3000/api/graphql`
