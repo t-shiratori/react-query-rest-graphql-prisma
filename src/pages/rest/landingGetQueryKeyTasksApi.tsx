@@ -1,5 +1,6 @@
 import type { NextPage } from 'next'
 import { Layout } from '../../components/layout'
+import { Overview } from '../../components/Overview'
 import { useGetTasksApi } from '../../hooks/useGetTasksApi'
 
 const Page: NextPage = () => {
@@ -9,6 +10,7 @@ const Page: NextPage = () => {
 
   return (
     <Layout>
+      <Overview>表示時に一覧データをロードする</Overview>
       <div>
         <h1 className="mb-3">結果</h1>
         <div>

@@ -1,28 +1,24 @@
 import { useQuery } from '@tanstack/react-query'
-import { TBaseQueryParams, TTodoResponse, TUserResponse } from './type'
+import { TBaseQueryParams, TUserResponse } from './type'
 
-type TParams = { id?: string } & TBaseQueryParams
+type TParams = { id: number } & TBaseQueryParams
 
-export const useTodoApi = ({
+export const useJsonplaceholderUserApi = ({
   id,
   successHandler,
   errorHandler,
   settledHandler,
   enabled = true,
-  staleTime,
-  cacheTime,
 }: TParams) => {
-  const apiUrl = `https://jsonplaceholder.typicode.com/todos/${id}`
+  const apiUrl = `https://jsonplaceholder.typicode.com/users/${id}`
 
-  return useQuery<TTodoResponse>({
-    queryKey: ['todos', id],
+  return useQuery<TUserResponse>({
+    queryKey: ['users', id],
     queryFn: async () => {
       const response = await fetch(apiUrl)
       return response.json()
     },
     enabled,
-    staleTime,
-    cacheTime,
     onSuccess: (data) => {
       successHandler?.(data)
     },

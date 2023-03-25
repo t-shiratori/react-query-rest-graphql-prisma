@@ -10,7 +10,7 @@ type TProps = {
 export const TextInput = ({ className, name, value, handleChange }: TProps) => {
   return (
     <input
-      className={`p-2 border-solid border-2 rounded border-slate-600 ${className}`}
+      className={`p-2 border-solid border-2 rounded border-slate-600 w-24 ${className}`}
       type="text"
       id={name}
       name={name}

@@ -5,6 +5,7 @@ import { Layout } from '../../components/layout'
 import { TextInput } from '../../components/TextInput'
 import { Prisma } from '@prisma/client'
 import { useMutationTaskApi } from '../../hooks/useMutationTaskApi'
+import { Overview } from '../../components/Overview'
 
 const Page: NextPage = () => {
   const [title, setTitle] = useState<string>()
@@ -21,6 +22,8 @@ const Page: NextPage = () => {
 
   return (
     <Layout>
+      <Overview>`mutation,`、 パラメーターを入力してボタンクリックで登録する</Overview>
+
       <div className="mb-3">
         タイトル <TextInput value={title ?? ''} handleChange={(e) => setTitle(e.target.value)} />
       </div>
@@ -29,6 +32,7 @@ const Page: NextPage = () => {
       </div>
 
       <Button
+        label={'登録する'}
         handleClick={() => {
           mutate(requestBody, {
             onSuccess: () => {
