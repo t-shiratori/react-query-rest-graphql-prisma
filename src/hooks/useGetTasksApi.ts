@@ -1,6 +1,7 @@
 import { useQuery } from '@tanstack/react-query'
 import { TBaseQueryParams } from './type'
 import { Prisma } from '@prisma/client'
+import { fetcher } from '../utils/apiClient'
 
 export const useGetTasksApi = ({
   successHandler,
@@ -10,14 +11,11 @@ export const useGetTasksApi = ({
   staleTime,
   cacheTime,
 }: TBaseQueryParams = {}) => {
-  const apiUrl = `/api/tasks`
+  const url = `/api/tasks`
 
   return useQuery<Prisma.TaskMinAggregateInputType[]>({
     queryKey: ['tasks'],
-    queryFn: async () => {
-      const response = await fetch(apiUrl)
-      return response.json()
-    },
+    queryFn: fetcher({ url, method: 'GET' }),
     enabled,
     staleTime,
     cacheTime,

@@ -1,10 +1,12 @@
 type TArgs = {
-	url: string
-	methods: 'GET' | 'POST' | 'PUT' | 'DELETE'
+  url: string
+  method: 'GET' | 'POST' | 'PUT' | 'DELETE'
+  body?: object
 }
 
-export const executeApi = (args: TArgs) => {
-	fetch(args.url)
-		.then((response) => response.json())
-		.then((data) => console.log(data))
-}
+export const fetcher =
+  ({ url, method, body }: TArgs) =>
+  async () => {
+    const response = await fetch(url, { method, body: JSON.stringify(body) })
+    return response.json()
+  }

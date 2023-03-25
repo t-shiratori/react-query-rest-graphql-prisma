@@ -1,4 +1,5 @@
 import { useQuery } from '@tanstack/react-query'
+import { fetcher } from '../utils/apiClient'
 import { TBaseQueryParams, TUserResponse } from './type'
 
 type TParams = { id: number } & TBaseQueryParams
@@ -10,14 +11,11 @@ export const useJsonplaceholderUserApi = ({
   settledHandler,
   enabled = true,
 }: TParams) => {
-  const apiUrl = `https://jsonplaceholder.typicode.com/users/${id}`
+  const url = `https://jsonplaceholder.typicode.com/users/${id}`
 
   return useQuery<TUserResponse>({
     queryKey: ['users', id],
-    queryFn: async () => {
-      const response = await fetch(apiUrl)
-      return response.json()
-    },
+    queryFn: fetcher({ url, method: 'GET' }),
     enabled,
     onSuccess: (data) => {
       successHandler?.(data)
