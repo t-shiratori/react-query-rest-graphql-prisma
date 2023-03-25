@@ -5,6 +5,7 @@ export type InputMaybe<T> = Maybe<T>;
 export type Exact<T extends { [key: string]: unknown }> = { [K in keyof T]: T[K] };
 export type MakeOptional<T, K extends keyof T> = Omit<T, K> & { [SubKey in K]?: Maybe<T[SubKey]> };
 export type MakeMaybe<T, K extends keyof T> = Omit<T, K> & { [SubKey in K]: Maybe<T[SubKey]> };
+export type RequireFields<T, K extends keyof T> = Omit<T, K> & { [P in K]-?: NonNullable<T[P]> };
 /** All built-in and custom scalars, mapped to their actual values */
 export type Scalars = {
   ID: string;
@@ -36,12 +37,27 @@ export type Geo = {
   lng?: Maybe<Scalars['String']>;
 };
 
+export type Mutation = {
+  __typename?: 'Mutation';
+  prismaUser?: Maybe<PrismaUser>;
+};
+
+
+export type MutationPrismaUserArgs = {
+  user: CreatePrismaUserInput;
+};
+
 export type Query = {
   __typename?: 'Query';
   hello?: Maybe<Scalars['String']>;
   jsonplaceholderPosts?: Maybe<Array<Maybe<JsonplaceholderPost>>>;
   jsonplaceholderUsers?: Maybe<Array<Maybe<JsonplaceholderUser>>>;
   prismaUsers?: Maybe<Array<Maybe<PrismaUser>>>;
+};
+
+export type CreatePrismaUserInput = {
+  email: Scalars['String'];
+  name: Scalars['String'];
 };
 
 export type JsonplaceholderPost = {
@@ -148,8 +164,10 @@ export type ResolversTypes = {
   Geo: ResolverTypeWrapper<Geo>;
   ID: ResolverTypeWrapper<Scalars['ID']>;
   Int: ResolverTypeWrapper<Scalars['Int']>;
+  Mutation: ResolverTypeWrapper<{}>;
   Query: ResolverTypeWrapper<{}>;
   String: ResolverTypeWrapper<Scalars['String']>;
+  createPrismaUserInput: CreatePrismaUserInput;
   jsonplaceholderPost: ResolverTypeWrapper<JsonplaceholderPost>;
   jsonplaceholderUser: ResolverTypeWrapper<JsonplaceholderUser>;
   prismaUser: ResolverTypeWrapper<User>;
@@ -163,8 +181,10 @@ export type ResolversParentTypes = {
   Geo: Geo;
   ID: Scalars['ID'];
   Int: Scalars['Int'];
+  Mutation: {};
   Query: {};
   String: Scalars['String'];
+  createPrismaUserInput: CreatePrismaUserInput;
   jsonplaceholderPost: JsonplaceholderPost;
   jsonplaceholderUser: JsonplaceholderUser;
   prismaUser: User;
@@ -190,6 +210,10 @@ export type GeoResolvers<ContextType = any, ParentType extends ResolversParentTy
   lat?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
   lng?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
+};
+
+export type MutationResolvers<ContextType = any, ParentType extends ResolversParentTypes['Mutation'] = ResolversParentTypes['Mutation']> = {
+  prismaUser?: Resolver<Maybe<ResolversTypes['prismaUser']>, ParentType, ContextType, RequireFields<MutationPrismaUserArgs, 'user'>>;
 };
 
 export type QueryResolvers<ContextType = any, ParentType extends ResolversParentTypes['Query'] = ResolversParentTypes['Query']> = {
@@ -231,6 +255,7 @@ export type Resolvers<ContextType = any> = {
   Address?: AddressResolvers<ContextType>;
   Company?: CompanyResolvers<ContextType>;
   Geo?: GeoResolvers<ContextType>;
+  Mutation?: MutationResolvers<ContextType>;
   Query?: QueryResolvers<ContextType>;
   jsonplaceholderPost?: JsonplaceholderPostResolvers<ContextType>;
   jsonplaceholderUser?: JsonplaceholderUserResolvers<ContextType>;

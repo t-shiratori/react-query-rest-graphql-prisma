@@ -3,3 +3,8 @@ type prismaUser {
   name: String!
   email: String!
 }
+
+input createPrismaUserInput {
+  name: String!
+  email: String!
+}

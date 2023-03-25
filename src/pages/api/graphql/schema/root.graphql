@@ -1,4 +1,4 @@
-#import prismaUser from "prismaUser.graphql"
+#import prismaUser, createPrismaUserInput from "prismaUser.graphql"
 #import jsonplaceholderPost from "jsonplaceholderPost.graphql"
 #import jsonplaceholderUser from "jsonplaceholderUser.graphql"
 
@@ -7,4 +7,8 @@ type Query {
   prismaUsers: [prismaUser]
   jsonplaceholderUsers: [jsonplaceholderUser]
   jsonplaceholderPosts: [jsonplaceholderPost]
+}
+
+type Mutation {
+  prismaUser(user: createPrismaUserInput!): prismaUser
 }

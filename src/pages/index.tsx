@@ -31,7 +31,10 @@ const Home: NextPage = () => {
             <Link href="/rest/clickMutationTaskApi">/rest/clickMutationTaskApi</Link>
           </li>
           <li className={`py-1`}>
-            <Link href="/graphQL/landingQueryUsersApi">/graphQL/useQueryUsersApi</Link>
+            <Link href="/graphQL/landingQueryUsersApi">/graphQL/landingQueryUsersApi</Link>
+          </li>
+          <li className={`py-1`}>
+            <Link href="/graphQL/clickMutationUsersApi">/graphQL/clickMutationUsersApi</Link>
           </li>
         </ul>
       </div>

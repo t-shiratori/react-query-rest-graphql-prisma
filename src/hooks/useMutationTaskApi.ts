@@ -5,9 +5,10 @@ import { fetcher } from '../utils/apiClient'
 export const useMutationTaskApi = () => {
   const url = `/api/task`
 
-  const mutationKey = ['posts']
+  const mutationKey = ['task', 'create']
 
-  return useMutation<Prisma.TaskCreateInput, unknown, Prisma.TaskCreateInput, unknown>(mutationKey, async (reqBody) =>
-    fetcher({ url, method: 'POST', body: reqBody })(),
-  )
+  return useMutation<Prisma.TaskCreateInput, unknown, Prisma.TaskCreateInput, unknown>({
+    mutationKey,
+    mutationFn: (reqBody) => fetcher({ url, method: 'POST', body: reqBody })(),
+  })
 }

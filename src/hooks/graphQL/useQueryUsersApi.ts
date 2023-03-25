@@ -1,23 +1,14 @@
 import { useQuery } from '@tanstack/react-query'
-import { GraphQLClient, gql } from 'graphql-request'
+import { gql } from 'graphql-request'
 import { JsonplaceholderUser } from '../../pages/api/graphql/types/graphql'
 import { TBaseQueryParams } from '../type'
-
-const API_URL = `/api/graphql`
-
-type TUser = {
-  id: string
-  name: String
-  email: String
-}
+import { graphQLClient } from './gqlClient'
 
 type TResponse = { jsonplaceholderUsers: JsonplaceholderUser[] } | undefined
 
 type TParams = ({ id?: number } & TBaseQueryParams) | undefined
 
-const graphQLClient = new GraphQLClient(API_URL)
-
-const gQuery = gql`
+const gqlQuery = gql`
   query Query {
     jsonplaceholderUsers {
       name
@@ -37,8 +28,8 @@ export const useQueryUsersApi = ({
   cacheTime,
 }: TParams = {}) => {
   return useQuery<TResponse>({
-    queryKey: ['graphql', 'users'],
-    queryFn: () => graphQLClient.request(gQuery),
+    queryKey: ['graphql', 'get', 'users'],
+    queryFn: () => graphQLClient.request(gqlQuery),
     enabled,
     staleTime,
     cacheTime,
