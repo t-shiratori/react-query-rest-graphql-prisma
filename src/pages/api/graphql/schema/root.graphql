@@ -1,0 +1,10 @@
+#import prismaUser from "prismaUser.graphql"
+#import jsonplaceholderPost from "jsonplaceholderPost.graphql"
+#import jsonplaceholderUser from "jsonplaceholderUser.graphql"
+
+type Query {
+  hello: String
+  prismaUsers: [prismaUser]
+  jsonplaceholderUsers: [jsonplaceholderUser]
+  jsonplaceholderPosts: [jsonplaceholderPost]
+}

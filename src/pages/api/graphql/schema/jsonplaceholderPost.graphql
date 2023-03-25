@@ -1,0 +1,6 @@
+type jsonplaceholderPost {
+  userId: Int
+  id: Int
+  title: String
+  body: String
+}

@@ -1,0 +1,5 @@
+type prismaUser {
+  id: ID!
+  name: String!
+  email: String!
+}
