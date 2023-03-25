@@ -25,10 +25,10 @@ const Page: NextPage = () => {
       <Overview>`mutation,`、 パラメーターを入力してボタンクリックで登録する</Overview>
 
       <div className="mb-3">
-        タイトル <TextInput value={title ?? ''} handleChange={(e) => setTitle(e.target.value)} />
+        タイトル <TextInput className="w-52" value={title ?? ''} handleChange={(e) => setTitle(e.target.value)} />
       </div>
       <div className="mb-3">
-        内容 <TextInput value={content ?? ''} handleChange={(e) => setContetnt(e.target.value)} />
+        内容 <TextInput className="w-52" value={content ?? ''} handleChange={(e) => setContetnt(e.target.value)} />
       </div>
 
       <Button
