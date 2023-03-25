@@ -2,8 +2,13 @@ import { ApolloServer } from '@apollo/server'
 import { startServerAndCreateNextHandler } from '@as-integrations/next'
 import { JsonplaceholderPostApi } from './datasources/jsonplaceholder-post'
 import { JsonplaceholderUserApi } from './datasources/jsonplaceholder-use'
+import { loadSchemaSync } from '@graphql-tools/load'
+import { GraphQLFileLoader } from '@graphql-tools/graphql-file-loader'
 import { resolvers } from './resolver'
-import { typeDefs } from './schema'
+
+const typeDefs = loadSchemaSync('src/pages/api/graphql/schema/root.graphql', {
+  loaders: [new GraphQLFileLoader()],
+})
 
 type TContextValue = {
   dataSources: {
@@ -13,8 +18,8 @@ type TContextValue = {
 }
 
 const server = new ApolloServer<TContextValue>({
-  resolvers,
   typeDefs,
+  resolvers,
 })
 
 export default startServerAndCreateNextHandler(server, {
