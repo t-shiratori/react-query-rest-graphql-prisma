@@ -6,8 +6,18 @@ const prisma = new PrismaClient()
 export const resolvers: Resolvers = {
   Query: {
     hello: () => 'Hello World',
+    prismaUser: async (_, args, ___, ____) => {
+      const result = await prisma.user.findUnique({
+        where: {
+          id: Number(args.id),
+        },
+      })
+      return result
+    },
     prismaUsers: () => prisma.user.findMany(),
+    jsonplaceholderUser: (_, args, contextValue) => contextValue.dataSources.jsonplaceholderUserApi.getUser(args.id),
     jsonplaceholderUsers: (_, __, contextValue) => contextValue.dataSources.jsonplaceholderUserApi.getUsers(),
+    jsonplaceholderPost: (_, args, contextValue) => contextValue.dataSources.jsonplaceholderPostApi.getPost(args.id),
     jsonplaceholderPosts: (_, __, contextValue) => contextValue.dataSources.jsonplaceholderPostApi.getPosts(),
   },
   Mutation: {

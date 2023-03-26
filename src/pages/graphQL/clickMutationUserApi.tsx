@@ -22,7 +22,7 @@ const Page: NextPage = () => {
 
   return (
     <Layout>
-      <Overview>`mutation,`、 パラメーターを入力してボタンクリックで登録する</Overview>
+      <Overview>GraphQL: `mutation,`、 パラメーターを入力してボタンクリックで登録する</Overview>
 
       <div className="mb-3">
         名前 <TextInput className={'w-40'} value={name ?? ''} handleChange={(e) => setTitle(e.target.value)} />

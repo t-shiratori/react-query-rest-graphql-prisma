@@ -1,7 +1,6 @@
 import { Prisma } from '@prisma/client'
 import { useMutation } from '@tanstack/react-query'
 import { gql } from 'graphql-request'
-
 import { graphQLClient } from './gqlClient'
 
 const gqlQuery = gql`

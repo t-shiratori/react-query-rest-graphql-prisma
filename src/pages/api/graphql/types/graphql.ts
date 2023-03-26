@@ -50,9 +50,27 @@ export type MutationPrismaUserArgs = {
 export type Query = {
   __typename?: 'Query';
   hello?: Maybe<Scalars['String']>;
+  jsonplaceholderPost?: Maybe<JsonplaceholderPost>;
   jsonplaceholderPosts?: Maybe<Array<Maybe<JsonplaceholderPost>>>;
+  jsonplaceholderUser?: Maybe<JsonplaceholderUser>;
   jsonplaceholderUsers?: Maybe<Array<Maybe<JsonplaceholderUser>>>;
+  prismaUser?: Maybe<PrismaUser>;
   prismaUsers?: Maybe<Array<Maybe<PrismaUser>>>;
+};
+
+
+export type QueryJsonplaceholderPostArgs = {
+  id: Scalars['ID'];
+};
+
+
+export type QueryJsonplaceholderUserArgs = {
+  id: Scalars['ID'];
+};
+
+
+export type QueryPrismaUserArgs = {
+  id: Scalars['ID'];
 };
 
 export type CreatePrismaUserInput = {
@@ -218,8 +236,11 @@ export type MutationResolvers<ContextType = any, ParentType extends ResolversPar
 
 export type QueryResolvers<ContextType = any, ParentType extends ResolversParentTypes['Query'] = ResolversParentTypes['Query']> = {
   hello?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
+  jsonplaceholderPost?: Resolver<Maybe<ResolversTypes['jsonplaceholderPost']>, ParentType, ContextType, RequireFields<QueryJsonplaceholderPostArgs, 'id'>>;
   jsonplaceholderPosts?: Resolver<Maybe<Array<Maybe<ResolversTypes['jsonplaceholderPost']>>>, ParentType, ContextType>;
+  jsonplaceholderUser?: Resolver<Maybe<ResolversTypes['jsonplaceholderUser']>, ParentType, ContextType, RequireFields<QueryJsonplaceholderUserArgs, 'id'>>;
   jsonplaceholderUsers?: Resolver<Maybe<Array<Maybe<ResolversTypes['jsonplaceholderUser']>>>, ParentType, ContextType>;
+  prismaUser?: Resolver<Maybe<ResolversTypes['prismaUser']>, ParentType, ContextType, RequireFields<QueryPrismaUserArgs, 'id'>>;
   prismaUsers?: Resolver<Maybe<Array<Maybe<ResolversTypes['prismaUser']>>>, ParentType, ContextType>;
 };
 

@@ -4,8 +4,11 @@
 
 type Query {
   hello: String
+  prismaUser(id: ID!): prismaUser
   prismaUsers: [prismaUser]
+  jsonplaceholderUser(id: ID!): jsonplaceholderUser
   jsonplaceholderUsers: [jsonplaceholderUser]
+  jsonplaceholderPost(id: ID!): jsonplaceholderPost
   jsonplaceholderPosts: [jsonplaceholderPost]
 }
 

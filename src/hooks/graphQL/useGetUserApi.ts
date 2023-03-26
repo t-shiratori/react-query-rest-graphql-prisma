@@ -4,22 +4,22 @@ import { JsonplaceholderUser } from '../../pages/api/graphql/types/graphql'
 import { TBaseQueryParams } from '../type'
 import { graphQLClient } from './gqlClient'
 
-type TResponse = { jsonplaceholderUsers: JsonplaceholderUser[] } | undefined
+type TResponse = { jsonplaceholderUser: JsonplaceholderUser } | undefined
 
-type TParams = ({ id?: number } & TBaseQueryParams) | undefined
+type TParams = ({ id?: string } & TBaseQueryParams) | undefined
 
 const gqlQuery = gql`
-  query Query {
-    jsonplaceholderUsers {
+  query Query($id: ID!) {
+    jsonplaceholderUser(id: $id) {
+      id
       name
-      posts {
-        title
-      }
+      email
     }
   }
 `
 
-export const useQueryUsersApi = ({
+export const useGetUserApi = ({
+  id,
   successHandler,
   errorHandler,
   settledHandler,
@@ -28,8 +28,8 @@ export const useQueryUsersApi = ({
   cacheTime,
 }: TParams = {}) => {
   return useQuery<TResponse>({
-    queryKey: ['graphql', 'get', 'users'],
-    queryFn: () => graphQLClient.request(gqlQuery),
+    queryKey: ['graphql', 'get', 'user', id],
+    queryFn: () => graphQLClient.request(gqlQuery, { id }),
     enabled,
     staleTime,
     cacheTime,
