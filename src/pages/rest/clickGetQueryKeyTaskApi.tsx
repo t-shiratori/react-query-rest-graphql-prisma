@@ -8,7 +8,7 @@ import { useTaskApi } from '../../hooks/useTaskApi'
 
 const Page: NextPage = () => {
   const [formValue, setFormValue] = useState<undefined | string>()
-  const [requestId, setRequestIdId] = useState<undefined | string>()
+  const [requestId, setRequestId] = useState<undefined | string>()
 
   const { isFetched, isLoading, isSuccess, isError, data, refetch } = useTaskApi({
     id: requestId,
@@ -36,7 +36,7 @@ const Page: NextPage = () => {
           handleClick={() => {
             if (!formValue) return
             if (formValue == requestId) return refetch()
-            setRequestIdId(formValue)
+            setRequestId(formValue)
           }}
         />
       </div>
