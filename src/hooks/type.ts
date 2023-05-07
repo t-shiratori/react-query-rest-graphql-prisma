@@ -46,3 +46,21 @@ export type TTodoResponse = {
   title: string
   completed: boolean
 }
+
+export type TAlbumResponse = {
+  userId: number
+  id: number
+  title: string
+}
+
+export type TAlbumsResponse = TAlbumResponse[]
+
+export type TPhotoResponse = {
+  albumId: number
+  id: number
+  title: string
+  url: string
+  thumbnailUrl: string
+}
+
+export type TPhotosResponse = TPhotoResponse[]

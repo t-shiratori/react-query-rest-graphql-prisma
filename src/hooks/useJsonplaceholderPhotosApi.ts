@@ -1,22 +1,26 @@
 import { useQuery } from '@tanstack/react-query'
 import { fetcher } from '../utils/apiClient'
-import { TBaseQueryParams, TUserResponse } from './type'
+import { TBaseQueryParams, TPhotosResponse } from './type'
 
-type TParams = { id?: number } & TBaseQueryParams
+type TParams = { albumId?: string } & TBaseQueryParams
 
-export const useJsonplaceholderUserApi = ({
-  id,
+export const useJsonplaceholderPhotosApi = ({
+  albumId,
   successHandler,
   errorHandler,
   settledHandler,
   enabled = true,
+  staleTime,
+  cacheTime,
 }: TParams) => {
-  const url = `https://jsonplaceholder.typicode.com/users/${id}`
+  const url = `https://jsonplaceholder.typicode.com/photos/?albumId=${albumId}`
 
-  return useQuery<TUserResponse>({
-    queryKey: ['users', id],
+  return useQuery<TPhotosResponse>({
+    queryKey: ['photos', albumId],
     queryFn: fetcher({ url, method: 'GET' }),
     enabled,
+    staleTime,
+    cacheTime,
     onSuccess: (data) => {
       successHandler?.(data)
     },

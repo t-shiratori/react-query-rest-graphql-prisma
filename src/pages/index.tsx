@@ -25,6 +25,9 @@ const Home: NextPage = () => {
             <Link href="/rest/clickGetQueryKeyTaskApi">/rest/clickGetQueryKeyTaskApi</Link>
           </li>
           <li className={`py-1`}>
+            <Link href="/rest/clickGetQueryKeyMultipleSequenceApi">/rest/clickGetQueryKeyMultipleSequenceApi</Link>
+          </li>
+          <li className={`py-1`}>
             <Link href="/rest/landingGetQueryKeyTasksApi">/rest/landingGetQueryKeyTasksApi</Link>
           </li>
           <li className={`py-1`}>
